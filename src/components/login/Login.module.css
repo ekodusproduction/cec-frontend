@@ -1,0 +1,139 @@
+/* login Container */
+
+.loginContainer {
+  width: 95%;
+  max-width: 400px;
+  box-shadow: 0 0 30px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: rgba(99, 98, 98, 0.2) 0px 2px 8px 0px;
+  padding: 2.4rem;
+  border-radius: var(--border-radius);
+  margin-inline: auto;
+  background-color: white;
+  margin-top: 10rem;
+}
+
+/* logo */
+
+.logoIcon {
+  width: 20px;
+}
+
+.logo {
+  display: flex;
+  gap: 1.6rem;
+  align-items: center;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--color-headings);
+  justify-content: center;
+}
+
+/* Welcome */
+
+.welcome {
+  color: var(--color-text);
+  margin-block: 2rem 3rem;
+}
+
+.title {
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.para {
+  line-height: 1.5;
+}
+
+/* form */
+
+.formControl {
+  margin-bottom: 2rem;
+}
+
+.formControl label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: inherit;
+}
+
+.formControl input[type="email"],
+.formControl input[type="password"] {
+  padding: 1rem 1.5rem;
+  border: 1px solid #d9dee3;
+  color: #697a8d;
+  outline: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.formControl input[type="email"]:focus,
+.formControl input[type="password"]:focus {
+  border-color: var(--color-primary);
+}
+
+/* check box */
+/* 
+#check {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+input[type="radio"] {
+  width: 16px;
+  height: 16px;
+}
+
+#check label {
+  margin: 0;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+} */
+
+/* role choice */
+
+.choiceContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 2rem 1rem;
+}
+
+.choiceContainer .formControl {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.choiceContainer .formControl label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Button */
+
+.loginContainer button {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* new account */
+
+.new {
+  text-align: center;
+  margin-block: 1.2rem 2rem;
+}
+
+.new a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.new a:hover {
+  text-decoration: underline;
+}

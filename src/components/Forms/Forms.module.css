@@ -1,0 +1,109 @@
+.formContainer {
+  padding: 3.2rem 2.4rem;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+}
+
+.heading {
+  color: black;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* section */
+
+.sectionHeading {
+  margin-block: 2.1rem 2.9rem;
+  color: #566a7f;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+/* form control */
+
+.formControl {
+  margin-bottom: 2.5rem;
+}
+
+.formControl ::placeholder {
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #aab3bd;
+}
+
+.formControl label {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #566a7f;
+  text-transform: capitalize;
+  font-weight: 600;
+  word-spacing: 3px;
+}
+
+.formControl input {
+  padding: 1rem 1.5rem;
+  width: 100%;
+  border: 1px solid #d9dee3;
+  color: #697a8d;
+  border-radius: var(--border-radius);
+  outline: 0;
+  border-radius: 5px;
+}
+
+.formControl input:hover,
+.formControl input:focus {
+  border-color: var(--color-primary);
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .formControl {
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.9rem;
+  }
+}
+
+/* error */
+
+.errorText {
+  color: red;
+  display: inline-block;
+  margin-top: 0.8rem;
+  font-size: 12px;
+}
+
+input.error,
+input.error:focus {
+  border-color: red;
+  box-shadow: none;
+}
+
+/* Buttons */
+
+.btnContainer {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+}

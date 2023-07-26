@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+}
+
+.main {
+  width: 100%;
+}
+
+main {
+  margin-inline: 1.6rem;
+}
+
+@media screen and (min-width: 1023px) {
+  .container {
+    gap: 7rem;
+  }
+
+  main {
+    margin-inline: 0 2.8rem;
+  }
+}
