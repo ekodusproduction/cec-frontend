@@ -49,7 +49,8 @@
   word-spacing: 3px;
 }
 
-.formControl input {
+.formControl input,
+.formControl select {
   padding: 1rem 1.5rem;
   width: 100%;
   border: 1px solid #d9dee3;
@@ -93,7 +94,9 @@
 }
 
 input.error,
-input.error:focus {
+input.error:focus,
+select.error,
+select.error:focus {
   border-color: red;
   box-shadow: none;
 }

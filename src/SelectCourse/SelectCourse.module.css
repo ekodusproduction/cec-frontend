@@ -1,0 +1,65 @@
+/* commmon styles */
+
+.qualSection,
+.courseContainer {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+}
+
+/* Main container */
+
+.container {
+  display: grid;
+  gap: 2rem;
+}
+
+/* Header (selects the qualification ) */
+
+.qualSection {
+  height: fit-content;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dropDown {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  outline: 0;
+  box-shadow: 4px 4px #ccc;
+  max-width: 400px;
+  font-weight: 500;
+}
+
+/* Courses */
+
+.courseContainer {
+  margin-bottom: 2rem;
+  display: grid;
+}
+
+.course {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+
+.courseTitle {
+  text-transform: capitalize;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 768px) {
+  .courseContainer {
+    grid-template-columns: 1fr auto;
+    align-items: start;
+  }
+}
