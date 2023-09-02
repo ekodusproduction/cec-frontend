@@ -1,0 +1,157 @@
+/* login Container */
+
+.loginContainer {
+  max-width: 400px;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  background-color: white;
+  overflow: hidden;
+  padding: 2.4rem;
+  margin-top: 15rem;
+  margin-inline: auto;
+}
+
+/* logo */
+
+.logoIcon {
+  width: 62px;
+  transform: translateY(1px);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.6rem;
+}
+
+/* Welcome */
+
+.welcome {
+  color: var(--color-text);
+  margin-block: 2rem 3rem;
+}
+
+.title {
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.para {
+  line-height: 1.5;
+}
+
+/* form */
+
+.formControl {
+  margin-bottom: 2rem;
+}
+
+.formControl label {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: inherit;
+}
+
+.formControl input {
+  padding: 1rem 1.5rem;
+  border: 1px solid #d9dee3;
+  color: #697a8d;
+  outline: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.formControl input[type="email"]:focus,
+.formControl input[type="password"]:focus {
+  border-color: var(--color-primary);
+}
+
+/* role choice */
+
+.choiceContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 2rem 1rem;
+}
+
+.choiceContainer .formControl {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.choiceContainer .formControl label {
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Button */
+
+.loginContainer button {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/* new account */
+
+.new {
+  text-align: center;
+  margin-block: 1.2rem 2rem;
+}
+
+.new a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.new a:hover {
+  text-decoration: underline;
+}
+
+/* error */
+
+.error {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.offscreen {
+  display: none;
+}
+
+/* radio options */
+
+.radioContainer,
+.radioControl {
+  display: flex;
+  align-items: center;
+}
+
+.radioContainer {
+  justify-content: space-between;
+  margin-block: 3rem;
+}
+
+.radioControl {
+  gap: 1.2rem;
+}
+
+.radioControl label {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  line-height: 1;
+  font-weight: 600;
+}

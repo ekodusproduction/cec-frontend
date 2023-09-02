@@ -1,0 +1,95 @@
+.heading {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #566a7f;
+}
+
+/* course List */
+
+.courseList {
+  margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 1.5rem;
+}
+
+.disabled {
+  display: none;
+}
+
+.pageNumbers {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.pageNumbers button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.navigateBtn {
+  cursor: pointer;
+  background-color: var(--color-primary);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  color: white;
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+}
+
+/* header container */
+
+.headerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2.128rem;
+}
+
+.searchContainer {
+  padding: 1rem 1.5rem;
+  outline: 0;
+  border: 1px solid grey;
+  box-shadow: var(--box-shadow);
+  border-radius: 23px;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.searchContainer input {
+  border: none;
+  outline: 0;
+}
+
+.noCourse {
+  text-align: center;
+}
+
+.searchContainer:focus input {
+  border: 1px solid var(--color-primary);
+}
+
+@media screen and (min-width: 600px) {
+  .headerContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .searchContainer {
+    max-width: 240px;
+    width: 100%;
+  }
+}

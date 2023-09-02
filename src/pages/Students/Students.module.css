@@ -1,0 +1,13 @@
+.card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+}
+
+.card > * {
+  font-size: 1.4rem !important;
+}
+
+.heading {
+  margin-block: 3.6rem 4rem;
+}

@@ -1,0 +1,90 @@
+/* center page container */
+
+.centerPageContainer {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 1023px) {
+  .centerPageContainer {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+/* card */
+
+.card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.centerImageContainer {
+  background-color: var(--color-primary);
+  height: 110px;
+  position: relative;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 5rem;
+}
+
+.centerImageContainer > img {
+  width: 98px;
+  height: 99px;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-45%, -10%);
+  background-color: white;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 1023px) {
+  .card {
+    width: 330px;
+  }
+}
+
+/* card Content */
+
+.cardContent {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.22rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #566a7f;
+  text-transform: uppercase;
+}
+
+.info span {
+  font-weight: 300;
+  margin-left: 1rem;
+}
+
+/* tab Table */
+
+.tableContainer {
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.container {
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* btn Container */
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  flex-wrap: wrap;
+}

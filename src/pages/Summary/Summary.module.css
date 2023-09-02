@@ -1,0 +1,131 @@
+/* summary page container */
+
+.summaryPageContainer {
+  display: grid;
+  gap: 3rem;
+}
+
+/* summary Container */
+
+.summaryContainer {
+  padding: 2.8rem 2.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.heading {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.summaryContainer button {
+  width: 100%;
+}
+
+/* course Item */
+
+.course {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* display: flex;
+  justify-content: space-between; */
+}
+
+.course p:last-of-type {
+  text-align: right;
+}
+
+.courseContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* price Container */
+
+.priceContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.price__type {
+  color: black;
+  font-weight: 800;
+}
+
+.price__money {
+  font-weight: 700;
+  text-align: center;
+}
+
+/* No cart Items  */
+
+.noItem {
+  text-align: center;
+  color: #10101082;
+}
+
+@media screen and (min-width: 1400px) {
+  .summaryPageContainer {
+    grid-template-columns: 1fr auto;
+  }
+
+  .summaryContainer {
+    order: 2;
+    height: 400px;
+    width: 400px;
+  }
+
+  .courseContainer {
+    flex-grow: 1;
+    overflow-y: scroll;
+  }
+
+  .course {
+    gap: 1.6rem;
+  }
+
+  .courseContainer::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* form Container */
+
+.heading {
+  font-size: 2rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.formContainer {
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  padding: 2.8rem 2rem;
+}
+
+/* heading container */
+
+.headingContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 1.1rem;
+  background-color: black;
+  border-radius: 6px;
+  color: white;
+  padding: 1rem 0.8rem;
+}
+
+.courseFee {
+  justify-self: center;
+}
+
+.registrationFees {
+  justify-self: end;
+}

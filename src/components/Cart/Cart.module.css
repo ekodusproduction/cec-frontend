@@ -1,0 +1,140 @@
+.shoppingCart {
+  padding: 3.2rem 2.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 488px;
+  box-shadow: 0 0 30px 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  border: none;
+  width: 88%;
+  margin-inline: auto;
+  z-index: 10;
+  position: fixed;
+  inset: 0;
+  top: 10rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 500px) {
+  .shoppingCart {
+    max-width: 630px;
+    margin-inline: auto 0;
+    top: 10rem;
+    right: 3.93rem;
+  }
+}
+
+.cartHeader,
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.totalItems,
+.totalHeading {
+  text-transform: uppercase;
+}
+
+.totalItems {
+  font-size: 1.8rem;
+}
+
+/* cart items */
+
+.cartItems {
+  flex-grow: 1;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.cartItems::-webkit-scrollbar {
+  display: none;
+}
+
+/* Total */
+
+.totalHeading {
+  font-size: 1.5rem;
+  color: black;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+.totalBill {
+  font-size: 2.15rem;
+  font-weight: 900;
+}
+
+/* button */
+
+.shoppingCart a {
+  width: 100%;
+}
+
+.noItem {
+  text-align: center;
+  color: #10101080;
+  padding-top: 12.2rem;
+}
+
+/* shopping cart button */
+
+.shoppingCart button {
+  width: 100%;
+  font-size: 1.68rem;
+  /* text-transform: uppercase; */
+}
+
+.headingContainer {
+  font-size: 1rem;
+  padding-block: 1rem;
+  display: grid;
+  font-weight: 400;
+  text-transform: uppercase;
+  grid-template-columns: 1fr 1fr 1fr 0.5fr;
+  background-color: black;
+  color: white;
+  padding-inline: 2rem;
+  border-radius: 5px;
+  /* outline: 1px solid lime; */
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.headingContainer h3:first-of-type {
+  text-align: left;
+}
+
+.headingContainer h3:nth-child(2) {
+  text-align: left;
+}
+
+.headingContainer h3:nth-child(3) {
+  padding-left: 1rem;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.action {
+  text-align: right;
+}
+
+@media screen and (max-width: 450px) {
+  .headingContainer {
+    gap: 1rem;
+    align-items: start;
+    font-size: 1.01rem;
+  }
+
+  .headingContainer h3:nth-child(3) {
+    white-space: normal;
+    padding-left: 0;
+  }
+}

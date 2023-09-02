@@ -1,0 +1,38 @@
+.shopping-cart-container {
+  width: 28px;
+  cursor: pointer;
+}
+
+/* Badge */
+
+.shoppingCart {
+  position: relative;
+}
+
+.totalItems {
+  position: absolute;
+  bottom: 0;
+  left: 11px;
+}
+
+.backDrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+.modalContainer {
+  width: 100%;
+  max-width: 1140px;
+  margin-inline: auto;
+  position: fixed;
+  top: 12rem;
+  left: 0;
+  right: 0;
+  z-index: 19;
+}
+
+.modal {
+  margin-inline: auto;
+}

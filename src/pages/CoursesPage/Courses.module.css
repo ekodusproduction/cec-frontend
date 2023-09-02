@@ -1,0 +1,32 @@
+.coursePage {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 4.26rem;
+}
+
+.coursePage a {
+  margin-bottom: 1.8rem;
+}
+
+.card {
+  padding: 2rem;
+  background-color: white;
+  border-radius: var(--border-radius);
+}
+
+.card > * {
+  font-size: 1.4rem !important;
+}
+
+.link {
+  width: fit-content;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.link a {
+  margin: 0;
+}
