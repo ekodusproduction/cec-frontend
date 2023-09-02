@@ -42,12 +42,6 @@ const StudentDetail = () => {
     navigate("edit", { state: student });
   };
 
-  const images = [
-    `http://139.59.83.187${student?.addressProof}`,
-    `http://139.59.83.187${student?.idProof}`,
-    `http://139.59.83.187${student?.academicCertificates}`,
-  ];
-
   return (
     <section>
       {loading && <Loader />}
@@ -132,8 +126,10 @@ const StudentDetail = () => {
                 <TabPanel header="Contact">
                   <div className={styles.section}>
                     <h3 className={styles.sectionHeading}>Present Address</h3>
-                    <p>{student.presentAddress}</p>
                     <div>
+                      <p className={styles.info}>
+                        Address: <span>{student.presentAddress}</span>
+                      </p>
                       <p className={styles.info}>
                         City :<span>{student.cityPresent}</span>
                       </p>
@@ -148,8 +144,10 @@ const StudentDetail = () => {
 
                   <div className={styles.section}>
                     <h3 className={styles.sectionHeading}>Pramanent Address</h3>
-                    <p>{student.permanentAddress}</p>
                     <div>
+                      <p className={styles.info}>
+                        Address: <span>{student.permanentAddress}</span>
+                      </p>
                       <p className={styles.info}>
                         City :<span>{student.cityPermanent}</span>
                       </p>
@@ -180,13 +178,51 @@ const StudentDetail = () => {
                   <p className={styles.info}>
                     Percentage:<span>{student.percentage || "__"} </span>
                   </p>
+                </TabPanel>
 
+                <TabPanel header="Documents">
                   <div className={styles.documents}>
-                    <h3>Academic Documents</h3>
+                    <h3 className={styles.sectionHeading}>Student Documents</h3>
                     {/* <ImageSlider images={images} /> */}
-                    <article>
-                      <div>
-                        <h2></h2>
+                    <article className={styles.documentsContainer}>
+                      <div className={styles.document}>
+                        <h3>Address Proof</h3>
+                        {student?.addressProof ? (
+                          <a
+                            target="_blank"
+                            href={`http://139.59.83.187${student.addressProof}`}
+                          >
+                            View
+                          </a>
+                        ) : (
+                          <span>Not Uploaded</span>
+                        )}
+                      </div>
+                      <div className={styles.document}>
+                        <h3>ID Proof</h3>
+                        {student?.idProof ? (
+                          <a
+                            href={`http://139.59.83.187${student.idProof}`}
+                            target="_blank"
+                          >
+                            View
+                          </a>
+                        ) : (
+                          <span>Not Uploaded</span>
+                        )}
+                      </div>
+                      <div className={styles.document}>
+                        <h3>Academic Certificate</h3>
+                        {student?.academicCertificates ? (
+                          <a
+                            target="_blank"
+                            href={`http://139.59.83.187${student.academicCertificates}`}
+                          >
+                            View
+                          </a>
+                        ) : (
+                          <span>Not Uploaded</span>
+                        )}
                       </div>
                     </article>
                   </div>
