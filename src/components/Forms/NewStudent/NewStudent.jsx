@@ -93,46 +93,6 @@ const NewStudent = ({ isSuper }) => {
           />
         </article>
       </section>
-
-      {/* Permanent Address Section */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionHeading}>Permanent Address</h2>
-        <article className={styles.containerStudent}>
-          <FormField
-            label="Address"
-            type="text"
-            name="permanentAddress"
-            id="permanentAddress"
-            placeholder="Please enter permanent address"
-            isMandetory="true"
-          />
-
-          <FormField
-            label="City"
-            type="text"
-            name="cityPermanent"
-            id="cityPermanent"
-            placeholder="Please enter permanent city"
-            isMandetory="true"
-          />
-          <FormField
-            label="Pin Code"
-            type="number"
-            name="pinCodePermanent"
-            id="pinCodePermanent"
-            placeholder="Please enter permanent Pin Code"
-            isMandetory="true"
-          />
-          <FormField
-            label="State"
-            type="text"
-            name="statePermanent"
-            id="statePermanent"
-            placeholder="Please enter permanent State"
-            isMandetory="true"
-          />
-        </article>
-      </section>
     </>
   );
 };

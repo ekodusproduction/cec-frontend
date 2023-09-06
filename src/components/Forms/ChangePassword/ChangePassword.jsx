@@ -12,7 +12,7 @@ import { BsArrowLeft } from "react-icons/bs";
 
 const UserPasswordChangeForm = () => {
   const { state } = useLocation();
-  const centerAdminId = state.headOfInstitute._id;
+  console.log(state);
   const centerId = state._id;
   const token = window.localStorage.getItem("accessToken");
   const headers = { Authorization: `Bearer ${token}` };
@@ -32,11 +32,11 @@ const UserPasswordChangeForm = () => {
   };
 
   const handleSubmit = async (values, { resetForm }) => {
-    const requestData = { ...values, centerAdminId };
+    const requestData = { ...values, centerId };
     console.log(requestData);
     try {
       await axios
-        .put("/api/center/login/changepassword", requestData, { headers })
+        .post("/api/center/login/changepassword", requestData, { headers })
         .then(() => {
           toast.success("Password changed!");
           resetForm();

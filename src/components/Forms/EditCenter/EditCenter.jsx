@@ -12,6 +12,9 @@ import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 
 const validationSchema = Yup.object().shape({
+  directorName: Yup.string()
+    .required("Director Name is required")
+    .min(4, "Director Name must be atleast 4 characters long"),
   centerName: Yup.string().required("Center Name is required"),
   centerCode: Yup.string()
     .required("Center Code is required")
@@ -57,17 +60,18 @@ const EditCenter = () => {
   const { state: center } = useLocation();
   const centerId = center._id;
   const initialValues = {
-    centerName: center.centerName,
-    centerCode: center.centerCode,
-    dateofReg: formatDate(center.dateofReg),
-    address: center.address,
-    landmark: center.landmark,
-    pinCode: center.pinCode,
-    district: center.district,
-    state: center.district,
-    alternateNumber: center.alternateNumber,
-    whatsApp: center.whatsApp,
-    email: center.email,
+    directorName: center.directorName || "",
+    centerName: center.centerName || "",
+    centerCode: center.centerCode || "",
+    dateofReg: formatDate(center.dateofReg) || "",
+    address: center.address || "",
+    landmark: center.landmark || "",
+    pinCode: center.pinCode || "",
+    district: center.district || "",
+    state: center.district || "",
+    alternateNumber: center.alternateNumber || "",
+    whatsApp: center.whatsApp || "",
+    email: center.email || "",
   };
   const [formData, setFormData] = useState(initialValues);
   const token = window.localStorage.getItem("accessToken");
@@ -106,6 +110,14 @@ const EditCenter = () => {
               <section className={styles.section}>
                 <h2 className={styles.sectionHeading}>Center Details</h2>
                 <article className={styles.container}>
+                  <FormField
+                    label="Director Name"
+                    type="text"
+                    name="directorName"
+                    id="directorName"
+                    placeholder="Please enter Director Name"
+                    isMandetory="true"
+                  />
                   <FormField
                     label="Center Name"
                     type="text"

@@ -39,10 +39,6 @@ const CenterDetail = () => {
     naviagte("edit_center", { state: center });
   };
 
-  const editAdminHandler = () => {
-    naviagte("edit_center_admin", { state: center });
-  };
-
   const passwordHandler = () => {
     naviagte("changepassword", { state: center });
   };
@@ -69,6 +65,9 @@ const CenterDetail = () => {
                 Center Name: <span>{center.centerName}</span>
               </p>
               <p className={styles.info}>
+                Director Name: <span>{center.directorName}</span>
+              </p>
+              <p className={styles.info}>
                 Registration Date:{" "}
                 <span>{`${indianDate(center.dateofReg)}`}</span>
               </p>
@@ -86,54 +85,13 @@ const CenterDetail = () => {
 
           <section className={styles.tabTable}>
             <TabView className={styles.tableContainer}>
-              <TabPanel header=" Admin Info" className={styles.container}>
-                {center.headOfInstitute && (
-                  <p className={styles.info}>
-                    Center Admin Name:{" "}
-                    <span>{center.headOfInstitute.adminName}</span>
-                  </p>
-                )}
-
-                {center.headOfInstitute && (
-                  <p className={styles.info}>
-                    Mobile: <span>{center.headOfInstitute.mobile}</span>
-                  </p>
-                )}
-                {center.headOfInstitute && (
-                  <p className={styles.info}>
-                    Email: <span>{center.headOfInstitute.email}</span>
-                  </p>
-                )}
-
-                {center.headOfInstitute && (
-                  <p className={styles.info}>
-                    Alternate Number:{" "}
-                    <span>{center.headOfInstitute.alternateNumber}</span>
-                  </p>
-                )}
-                {center.headOfInstitute && (
-                  <p className={styles.info}>
-                    Pin Code: <span>{center.headOfInstitute.pinCode}</span>
-                  </p>
-                )}
-                {center.headOfInstitute && (
-                  <p className={styles.info}>
-                    Address: <span>{center.headOfInstitute.address}</span>
-                  </p>
-                )}
-                {center.headOfInstitute && (
-                  <p className={styles.info}>
-                    District: <span>{center.headOfInstitute.district}</span>
-                  </p>
-                )}
-              </TabPanel>
-
               <TabPanel header="Contact" className={styles.container}>
                 <p className={styles.info}>
                   Center address: <span>{center.address}</span>
                 </p>
                 <p className={styles.info}>
-                  Center alternate Number: <span>{center.alternateNumber}</span>
+                  Center alternate Number:
+                  <span>{center.alternateNumber}</span>
                 </p>
                 <p className={styles.info}>
                   Pin code:
@@ -153,7 +111,7 @@ const CenterDetail = () => {
                 </p>
                 <p className={styles.info}>
                   WhatsApp Number:
-                  <span>{center.whatsApp}</span>
+                  <span>+91 {center.whatsApp}</span>
                 </p>
               </TabPanel>
             </TabView>
@@ -161,7 +119,7 @@ const CenterDetail = () => {
 
           <div className={styles.btnContainer}>
             <Button onClick={editCenterHandler}>Edit Center Details</Button>
-            <Button onClick={editAdminHandler}>Edit Admin Details</Button>
+
             <Button onClick={passwordHandler}>
               Change Center Login Password
             </Button>

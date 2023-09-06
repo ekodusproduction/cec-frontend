@@ -10,7 +10,6 @@ import { BsArrowLeft } from "react-icons/bs";
 import Loader from "../../components/Loader/Loader";
 import { useNavigate } from "react-router";
 import useAuth from "../../hooks/useAuth";
-import ImageSlider from "../../components/imageSlider/ImageSlider";
 
 const StudentDetail = () => {
   const [student, setStudent] = useState("");
@@ -142,7 +141,7 @@ const StudentDetail = () => {
                     </div>
                   </div>
 
-                  <div className={styles.section}>
+                  {/* <div className={styles.section}>
                     <h3 className={styles.sectionHeading}>Pramanent Address</h3>
                     <div>
                       <p className={styles.info}>
@@ -158,7 +157,7 @@ const StudentDetail = () => {
                         Pincode:<span> {student.pinCodePermanent}</span>
                       </p>
                     </div>
-                  </div>
+                  </div> */}
                 </TabPanel>
 
                 <TabPanel header="Education">

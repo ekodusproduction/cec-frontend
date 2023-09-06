@@ -39,16 +39,16 @@ export const getSidebarData = (type) => {
       title: "Centers List",
       link: "/centers",
     },
-    {
-      icon: FaUsersCog,
-      title: "Add Center Admin",
-      link: "/newAdmin",
-    },
-    {
-      icon: BiSolidLayerPlus,
-      title: "Center Admin List",
-      link: "/centeradmins",
-    },
+    // {
+    //   icon: FaUsersCog,
+    //   title: "Add Center Admin",
+    //   link: "/newAdmin",
+    // },
+    // {
+    //   icon: BiSolidLayerPlus,
+    //   title: "Center Admin List",
+    //   link: "/centeradmins",
+    // },
   ];
 
   const regularItems = [...commonItems];

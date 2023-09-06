@@ -20,7 +20,7 @@ import EditCenter from "./components/Forms/EditCenter/EditCenter";
 import ErrorPage from "./pages/ErrorPage";
 import RequireAuth from "./components/RequireAuth";
 import ChangePassword from "./components/Forms/ChangePassword/ChangePassword";
-import CenterAdminList from "./pages/CenterAdminList/CenterAdminList";
+// import CenterAdminList from "./pages/CenterAdminList/CenterAdminList";
 
 function App() {
   return (
@@ -46,7 +46,7 @@ function App() {
             <Route path="courses/newcourse" element={<NewCourse />} />
             <Route path="newcenter" element={<RegisterCenter />} />
             <Route path="centers" element={<Centers />} />
-            <Route path="centeradmins" element={<CenterAdminList />} />
+            {/* <Route path="centeradmins" element={<CenterAdminList />} /> */}
             <Route path="centers/:id" element={<CenterDetail />} />
             <Route path="centers/:id/edit_center" element={<EditCenter />} />
             <Route path="student/:roll/edit" element={<EditStudent />} />

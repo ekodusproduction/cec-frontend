@@ -7,19 +7,25 @@ import axios from "../../../api/axios";
 import { toast } from "react-toastify";
 
 const validationSchema = Yup.object().shape({
-  adminMobile: Yup.number()
-    .required("Center admin Number is a required ")
-    .positive("number can't be negative")
-    .test(
-      "len",
-      "Registration number must be exactly 10 digits",
-      (val) => val && val.toString().length === 10
-    ),
+  // adminMobile: Yup.number()
+  //   .required("Center admin Number is a required ")
+  //   .positive("number can't be negative")
+  //   .test(
+  //     "len",
+  //     "Registration number must be exactly 10 digits",
+  //     (val) => val && val.toString().length === 10
+  //   ),
+  directorName: Yup.string()
+    .required("Director Name is required")
+    .min(4, "Director Name must be at least 4 characters long"),
   centerName: Yup.string().required("Center Name is required"),
   centerCode: Yup.string()
     .required("Center Code is required")
     .matches(/^[0-9]{3}$/, "Center Code must be a 3-digit number")
     .notOneOf(["000"], "Center Code cannot be 000"),
+  password: Yup.string()
+    .required("password is required")
+    .min(8, "password length must be greater than 8"),
   dateofReg: Yup.date()
     .required("Date of Registration is required")
     .max(new Date(), "Date of Registration cannot be in the future"),
@@ -57,7 +63,8 @@ const validationSchema = Yup.object().shape({
 });
 
 const initialValues = {
-  adminMobile: "",
+  // adminMobile: "",
+  directorName: "",
   centerName: "",
   centerCode: "",
   dateofReg: "",
@@ -76,6 +83,7 @@ const handleCenterNameInput = (e) => {
 };
 
 const handleSubmit = async (values, { resetForm }) => {
+  console.log(values);
   try {
     const token = window.localStorage.getItem("accessToken");
     const headers = { Authorization: `Bearer ${token}` };
@@ -103,13 +111,23 @@ const RegsiterCenter = () => {
             <section className={styles.section}>
               <h2 className={styles.sectionHeading}>Center Details</h2>
               <article className={styles.container}>
-                <FormField
+                {/* <FormField
                   label="center admin registration number"
                   type="number"
                   name="adminMobile"
                   id="adminMobile"
                   placeholder="enter center admin registration number"
                   isMandetory="true"
+                />
+                 */}
+                <FormField
+                  label="Director Name"
+                  type="text"
+                  name="directorName"
+                  id="directorName"
+                  placeholder="Please enter Director Name"
+                  isMandetory="true"
+                  onInput={handleCenterNameInput}
                 />
                 <FormField
                   label="Center Name"
@@ -126,6 +144,14 @@ const RegsiterCenter = () => {
                   name="centerCode"
                   id="centerCode"
                   placeholder="Eg: 008"
+                  isMandetory="true"
+                />
+                <FormField
+                  label="Password"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Please enter login password"
                   isMandetory="true"
                 />
                 <FormField

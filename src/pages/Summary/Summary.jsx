@@ -35,10 +35,10 @@ const Summary = () => {
     presentAddress: "",
     cityPresent: "",
     statePresent: "",
-    permanentAddress: "",
-    statePermanent: "",
-    cityPermanent: "",
-    pinCodePermanent: "",
+    // permanentAddress: "",
+    // statePermanent: "",
+    // cityPermanent: "",
+    // pinCodePermanent: "",
   };
 
   const dynamicValidationSchema = Yup.object().shape({
@@ -70,17 +70,17 @@ const Summary = () => {
     presentAddress: Yup.string().required("Please enter Present Address"),
     cityPresent: Yup.string().required("Please enter present city!"),
     statePresent: Yup.string().required("Please enter present state"),
-    permanentAddress: Yup.string().required("Please enter Permanent Address"),
-    statePermanent: Yup.string().required("Please enter Permanent state"),
-    cityPermanent: Yup.string().required("Please enter City"),
-    pinCodePermanent: Yup.number()
-      .required("Please enter Permanent Pin Code")
-      .min(1, "Pin Code can't be negative")
-      .test(
-        "len",
-        "Pin code must be exactly 6 digits",
-        (val) => val && val.toString().length === 6
-      ),
+    // permanentAddress: Yup.string().required("Please enter Permanent Address"),
+    // statePermanent: Yup.string().required("Please enter Permanent state"),
+    // cityPermanent: Yup.string().required("Please enter City"),
+    // pinCodePermanent: Yup.number()
+    //   .required("Please enter Permanent Pin Code")
+    //   .min(1, "Pin Code can't be negative")
+    //   .test(
+    //     "len",
+    //     "Pin code must be exactly 6 digits",
+    //     (val) => val && val.toString().length === 6
+    //   ),
     ...(isSuper
       ? {
           centerCode: Yup.string()
@@ -95,6 +95,8 @@ const Summary = () => {
     const data = { ...values, qualification, courses };
     console.log(data);
     const apiUrl = isSuper ? "/api/student" : "/api/student/center";
+
+    console.log(apiUrl);
 
     try {
       await axios.post(apiUrl, data, { headers }).then(() => {

@@ -70,14 +70,14 @@ const validationSchema = Yup.object().shape({
   presentAddress: Yup.string().required("Present Address is required"),
   cityPresent: Yup.string().required("Present City is required"),
   statePresent: Yup.string().required("Present State is required"),
-  permanentAddress: Yup.string().required("Permanent Address is required"),
-  statePermanent: Yup.string().required("Permanent State is required"),
-  cityPermanent: Yup.string().required("Permanent City is required"),
-  pinCodePermanent: Yup.number()
-    .required("Permanent Pin Code is required")
-    .test("isSixDigits", "Pin code must be exactly 6 digits", (value) =>
-      /^\d{6}$/.test(value)
-    ),
+  // permanentAddress: Yup.string().required("Permanent Address is required"),
+  // statePermanent: Yup.string().required("Permanent State is required"),
+  // cityPermanent: Yup.string().required("Permanent City is required"),
+  // pinCodePermanent: Yup.number()
+  //   .required("Permanent Pin Code is required")
+  //   .test("isSixDigits", "Pin code must be exactly 6 digits", (value) =>
+  //     /^\d{6}$/.test(value)
+  //   ),
   qualification: Yup.string().required("Please select qualification"),
 });
 
@@ -90,10 +90,10 @@ const initialValues = {
   presentAddress: "",
   cityPresent: "",
   statePresent: "",
-  permanentAddress: "",
-  statePermanent: "",
-  cityPermanent: "",
-  pinCodePermanent: "",
+  // permanentAddress: "",
+  // statePermanent: "",
+  // cityPermanent: "",
+  // pinCodePermanent: "",
   fathersName: "",
   mothersName: "",
   gender: "",
@@ -127,6 +127,7 @@ const EditStudent = () => {
   const { DOB } = data;
   const student = { ...data, DOB: formatDate(DOB) };
   const qualification = data?.qualification?._id;
+  delete student.rollNumber;
   const updatedData = { ...initialValues, ...student, qualification };
 
   useEffect(() => {
@@ -340,7 +341,7 @@ const EditStudent = () => {
                   </article>
                 </section>
 
-                {/* Permanent Address */}
+                {/* Permanent Address
                 <section className={styles.section}>
                   <h2 className={styles.sectionHeading}>Permanent Address</h2>
                   <article className={styles.container}>
@@ -373,7 +374,7 @@ const EditStudent = () => {
                       placeholder="Enter permanent pincode"
                     />
                   </article>
-                </section>
+                </section> */}
 
                 {/* Qualification Details */}
                 <section className={styles.section}>

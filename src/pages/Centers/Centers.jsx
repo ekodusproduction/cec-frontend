@@ -27,11 +27,10 @@ const CenterAdmins = () => {
           centerName,
           dateofReg,
           totalStudent,
-          headOfInstitute,
+          directorName,
           _id,
         } = item;
 
-        const adminName = headOfInstitute?.adminName;
         const registerDate = indianDate(dateofReg);
 
         return {
@@ -39,10 +38,12 @@ const CenterAdmins = () => {
           centerName,
           registerDate,
           totalStudent,
-          adminName,
+          directorName,
           centerId: _id,
         };
       });
+
+      console.log(centersData);
 
       setCenters(centersData);
       setLoading(false);
@@ -90,7 +91,12 @@ const CenterAdmins = () => {
               filter
               header="Total Students"
             />
-            <Column field="adminName" sortable filter header="Center Admin" />
+            <Column
+              field="directorName"
+              sortable
+              filter
+              header="Director Name"
+            />
             <Column header="Actions" body={actionBodyTemplate} />
           </DataTable>
         </div>
