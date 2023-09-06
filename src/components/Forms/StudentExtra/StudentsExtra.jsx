@@ -48,8 +48,7 @@ const validationSchema = Yup.object().shape({
   percentage: Yup.number()
     .required("Please enter marks in %")
     .min(0, "Percentage can't be negative")
-    .max(100, "Percentage can't be greater than 100")
-    .moreThan(30, "Percentage should be greater than 30"),
+    .max(100, "Percentage can't be greater than 100"),
   addressProof: Yup.mixed().required("Please upload address proof"),
   idProof: Yup.mixed().required("Please upload ID proof"),
   academicCertificates: Yup.mixed().required(

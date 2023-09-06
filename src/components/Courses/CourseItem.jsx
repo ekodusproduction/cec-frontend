@@ -39,12 +39,12 @@ const CourseItem = ({ item, idx }) => {
           Course Name: <span> {item.courseName}</span>
         </p>
         <p>
-          Course Fees: <span> {item.courseFee}</span>
+          Course Fees: <span> {item.courseFee.toFixed(2)}</span>
         </p>
 
         <p className={styles.courseReg}>
           Registration Fees:
-          <span> {item.qualificationType.registrationFees}</span>
+          <span> {item.qualificationType.registrationFees.toFixed(2)}</span>
         </p>
       </div>
       <Button onClick={addItemToCart} disabled={isAddedToCart}>

@@ -71,15 +71,14 @@ const initialValues = {
   email: "",
 };
 
-const token = window.localStorage.getItem("accessToken");
-const headers = { Authorization: `Bearer ${token}` };
-
 const handleCenterNameInput = (e) => {
   e.target.value = e.target.value.toUpperCase();
 };
 
 const handleSubmit = async (values, { resetForm }) => {
   try {
+    const token = window.localStorage.getItem("accessToken");
+    const headers = { Authorization: `Bearer ${token}` };
     await axios.post("/api/center", values, { headers }).then(() => {
       resetForm();
       toast.success("Center added sucessfully");

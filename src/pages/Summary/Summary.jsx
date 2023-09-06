@@ -6,6 +6,7 @@ import axios from "../../api/axios";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { uiActions } from "../../store/slices/uiSlice";
+import { cartActions } from "../../store/slices/cartSlice";
 import useAuth from "../../hooks/useAuth";
 import Button from "../../components/Buttons/Button";
 import NewStudent from "../../components/Forms/NewStudent/NewStudent";
@@ -99,6 +100,7 @@ const Summary = () => {
       await axios.post(apiUrl, data, { headers }).then(() => {
         toast.success("Student Registration done successfully!");
         resetForm();
+        dispatch(cartActions.emptyCart());
       });
     } catch (error) {
       console.log(error);

@@ -21,6 +21,7 @@ const Search = () => {
     navigate("/login");
     dispatch(cartActions.emptyCart());
     window.localStorage.removeItem("accessToken");
+    localStorage.removeItem("isSuperAdmin");
   };
 
   const sideChangeHandler = () => {

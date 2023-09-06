@@ -16,28 +16,28 @@ export const getSidebarData = (type) => {
       link: "/courses",
     },
     {
-      icon: BsFillPersonFill,
-      title: "Students List",
-      link: "/student",
-    },
-    {
       icon: BsFillPersonPlusFill,
       title: "Add New Student",
       link: "/newstudent",
+    },
+    {
+      icon: BsFillPersonFill,
+      title: "Students List",
+      link: "/student",
     },
   ];
 
   const superItems = [
     ...commonItems,
     {
-      icon: BsFillPersonPlusFill,
-      title: "Centers List",
-      link: "/centers",
-    },
-    {
       icon: BiSolidLayerPlus,
       title: "Add New Center",
       link: "/newcenter",
+    },
+    {
+      icon: BsFillPersonPlusFill,
+      title: "Centers List",
+      link: "/centers",
     },
     {
       icon: FaUsersCog,
