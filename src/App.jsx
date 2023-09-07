@@ -20,7 +20,6 @@ import EditCenter from "./components/Forms/EditCenter/EditCenter";
 import ErrorPage from "./pages/ErrorPage";
 import RequireAuth from "./components/RequireAuth";
 import ChangePassword from "./components/Forms/ChangePassword/ChangePassword";
-// import CenterAdminList from "./pages/CenterAdminList/CenterAdminList";
 
 function App() {
   return (

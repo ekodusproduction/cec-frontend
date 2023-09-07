@@ -1,15 +1,23 @@
 import { useLocation, Navigate, Outlet } from "react-router";
-import useAuth from "../hooks/useAuth";
+import jwt_decode from "jwt-decode";
 
 const RequireAuth = () => {
-  const { auth } = useAuth();
   const location = useLocation();
+  const token = window.localStorage.getItem("accessToken");
 
-  return auth.data ? (
-    <Outlet />
-  ) : (
-    <Navigate to="/login" state={{ from: location }} replace />
-  );
+  if (!token) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  const { exp } = jwt_decode(token);
+  const current = Date.now();
+  const currentSeconds = Math.floor(current / 1000);
+
+  if (exp < currentSeconds) {
+    return <Navigate to="/login" state={{ from: location }} replace />;
+  }
+
+  return <Outlet />;
 };
 
 export default RequireAuth;

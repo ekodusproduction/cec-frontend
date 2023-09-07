@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router";
 import { uiActions } from "../../store/slices/uiSlice";
 import { cartActions } from "../../store/slices/cartSlice";
-import useAuth from "../../hooks/useAuth";
 import Button from "../../components/Buttons/Button";
 import NewStudent from "../../components/Forms/NewStudent/NewStudent";
 import styles from "./Summary.module.css";
@@ -16,7 +15,6 @@ const Summary = () => {
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const { centerCode, isSuper } = useAuth();
   const qualification = cart.qualification;
   const token = window.localStorage.getItem("accessToken");
   const headers = { Authorization: `Bearer ${token}` };
@@ -26,7 +24,7 @@ const Summary = () => {
   });
 
   const initialValues = {
-    centerCode: isSuper ? "" : centerCode,
+    centerCode: "",
     firstName: "",
     lastName: "",
     DOB: "",
@@ -81,22 +79,16 @@ const Summary = () => {
     //     "Pin code must be exactly 6 digits",
     //     (val) => val && val.toString().length === 6
     //   ),
-    ...(isSuper
-      ? {
-          centerCode: Yup.string()
-            .required("Center Code is required")
-            .matches(/^[0-9]{3}$/, "Center Code must be a 3-digit number")
-            .notOneOf(["000"], "Center Code cannot be 000"),
-        }
-      : {}),
+    centerCode: Yup.string()
+      .required("Center Code is required")
+      .matches(/^[0-9]{3}$/, "Center Code must be a 3-digit number")
+      .notOneOf(["000"], "Center Code cannot be 000"),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
     const data = { ...values, qualification, courses };
     console.log(data);
-    const apiUrl = isSuper ? "/api/student" : "/api/student/center";
-
-    console.log(apiUrl);
+    const apiUrl = "/api/student";
 
     try {
       await axios.post(apiUrl, data, { headers }).then(() => {
@@ -128,7 +120,7 @@ const Summary = () => {
         <Form className={styles.summaryPageContainer}>
           <section className={styles.formContainer}>
             <h2 className={styles.heading}>Register student</h2>
-            <NewStudent isSuper={isSuper} />
+            <NewStudent />
           </section>
           <article className={styles.summaryContainer}>
             <h3 className={styles.heading}>Summary</h3>

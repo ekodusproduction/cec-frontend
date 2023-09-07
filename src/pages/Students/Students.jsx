@@ -7,14 +7,10 @@ import { indianDate } from "../../utils";
 import Loader from "../../components/Loader/Loader";
 import { Link } from "react-router-dom";
 import { BsEyeFill } from "react-icons/bs";
-import useAuth from "../../hooks/useAuth";
 
 const Students = () => {
   const [students, setStudents] = useState([]);
-  const { isSuper } = useAuth();
   const [loading, setLoading] = useState(false);
-  const { auth } = useAuth();
-  const centerId = auth?.data?._id;
   const token = window.localStorage.getItem("accessToken");
   const headers = { Authorization: `Bearer ${token}` };
 
@@ -22,9 +18,7 @@ const Students = () => {
     const fetchStudents = async () => {
       setLoading(true);
       try {
-        const apiUrl = isSuper
-          ? "/api/student/all"
-          : `/api/student/center/${centerId}`;
+        const apiUrl = "/api/student/all";
         const response = await axios.get(apiUrl, { headers });
 
         const data = response.data.data;
@@ -101,9 +95,7 @@ const Students = () => {
                 header="Registration Date"
               />
               <Column field="courseName" sortable filter header="Course" />
-              {isSuper && (
-                <Column field="centerName" sortable filter header="Center" />
-              )}
+              <Column field="centerName" sortable filter header="Center" />
               <Column header="Actions" body={actionBodyTemplate} />
             </DataTable>
           </div>

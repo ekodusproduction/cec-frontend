@@ -1,7 +1,7 @@
 import FormField from "../FormField";
 import styles from "../formStyles.module.css";
 
-const NewStudent = ({ isSuper }) => {
+const NewStudent = () => {
   return (
     <>
       <section className={styles.section}>
@@ -9,16 +9,14 @@ const NewStudent = ({ isSuper }) => {
           Please enter student basic details
         </h2>
         <article className={styles.containerStudent}>
-          {isSuper && (
-            <FormField
-              label="Center Code"
-              type="text"
-              name="centerCode"
-              id="centerCode"
-              placeholder="Please enter center code"
-              isMandetory="true"
-            />
-          )}
+          <FormField
+            label="Center Code"
+            type="text"
+            name="centerCode"
+            id="centerCode"
+            placeholder="Please enter center code"
+            isMandetory="true"
+          />
           <FormField
             label="First Name"
             type="text"

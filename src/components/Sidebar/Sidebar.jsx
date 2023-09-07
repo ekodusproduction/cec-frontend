@@ -5,14 +5,11 @@ import { NavLink } from "react-router-dom";
 import { BiSolidChevronLeft } from "react-icons/bi";
 import { useSelector, useDispatch } from "react-redux";
 import { uiActions } from "../../store/slices/uiSlice";
-import useAuth from "../../hooks/useAuth";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
-  const { auth } = useAuth();
   const show = useSelector((state) => state.ui.showSidebar);
-  const isSuper = auth.data.isSuperAdmin ? "Super" : "Center";
-  const sidebarData = getSidebarData(isSuper);
+  const sidebarData = getSidebarData();
   const activeRouteHandler = ({ isActive }) =>
     isActive ? `${styles.link} ${styles.active}` : styles.link;
 
@@ -33,7 +30,7 @@ const Sidebar = () => {
             alt="user photo"
             className={styles.uImage}
           />
-          <h2 className={styles.uName}>{isSuper} admin</h2>
+          <h2 className={styles.uName}>Super admin</h2>
           <BiSolidChevronLeft
             size={35}
             className={styles.chevron}

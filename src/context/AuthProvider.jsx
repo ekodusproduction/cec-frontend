@@ -3,14 +3,9 @@ const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [auth, setAuth] = useState({});
-  const isSuper = auth?.data?.isSuperAdmin;
-  const centerCode = auth?.data?.centerCode;
-  const centerId = auth?.data?._id;
 
   return (
-    <AuthContext.Provider
-      value={{ auth, setAuth, isSuper, centerCode, centerId }}
-    >
+    <AuthContext.Provider value={{ auth, setAuth }}>
       {children}
     </AuthContext.Provider>
   );

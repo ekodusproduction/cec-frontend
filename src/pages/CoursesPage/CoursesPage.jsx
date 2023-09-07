@@ -7,12 +7,10 @@ import styles from "./Courses.module.css";
 import Loader from "../../components/Loader/Loader";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import useAuth from "../../hooks/useAuth";
 
 const CoursesPage = () => {
   const [courses, setCourses] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const { isSuper } = useAuth();
   const token = window.localStorage.getItem("accessToken");
   const headers = { Authorization: `Bearer ${token}` };
 
@@ -57,11 +55,9 @@ const CoursesPage = () => {
     <section className={styles.coursePage}>
       <div className={styles.link}>
         <h2>Courses List</h2>
-        {isSuper && (
-          <Link to="/courses/newcourse">
-            <Button>Add Course</Button>
-          </Link>
-        )}
+        <Link to="/courses/newcourse">
+          <Button>Add Course</Button>
+        </Link>
       </div>
 
       {isLoading && <Loader />}

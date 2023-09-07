@@ -14,14 +14,12 @@ const Search = () => {
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const { setAuth } = useAuth();
-  const data = useLocation();
 
   const logoutHandler = () => {
     setAuth(null);
     navigate("/login");
     dispatch(cartActions.emptyCart());
     window.localStorage.removeItem("accessToken");
-    localStorage.removeItem("isSuperAdmin");
   };
 
   const sideChangeHandler = () => {

@@ -9,14 +9,12 @@ import { Link } from "react-router-dom";
 import { BsArrowLeft } from "react-icons/bs";
 import Loader from "../../components/Loader/Loader";
 import { useNavigate } from "react-router";
-import useAuth from "../../hooks/useAuth";
 
 const StudentDetail = () => {
   const [student, setStudent] = useState("");
   const [loading, setLoading] = useState(false);
   const { roll } = useParams();
   const navigate = useNavigate();
-  const { isSuper } = useAuth();
   const token = window.localStorage.getItem("accessToken");
   const headers = { Authorization: `Bearer ${token}` };
 
@@ -236,9 +234,7 @@ const StudentDetail = () => {
                 </Link>
               )}
 
-              {isSuper && (
-                <Button onClick={navigateHandler}>Edit Student </Button>
-              )}
+              <Button onClick={navigateHandler}>Edit Student </Button>
             </div>
           </section>
         </>
