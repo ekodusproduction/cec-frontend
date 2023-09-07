@@ -1,0 +1,59 @@
+/* courses */
+
+.course {
+  display: grid;
+  border-bottom: 1px solid #c3cbd4;
+  gap: 1.4rem;
+  padding-bottom: 2rem;
+}
+
+.courseContent {
+  display: grid;
+  gap: 0.6rem;
+  color: #566a7f;
+  font-weight: 600;
+  line-height: 1.5;
+  word-spacing: 2px;
+}
+
+.courseContent span {
+  font-weight: 400;
+  color: #697a8d;
+}
+
+.courseID {
+  white-space: nowrap;
+}
+
+/* .courseReg {
+  background-color: black;
+  color: white;
+  width: fit-content;
+  padding: 0.5rem;
+  height: fit-content;
+  white-space: nowrap;
+}
+
+.courseReg span {
+  color: inherit;
+} */
+
+/* pagination */
+
+@media screen and (min-width: 768px) {
+  .course {
+    grid-template-columns: auto 1fr auto;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  .course button {
+    align-self: start;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .course {
+    gap: 2rem;
+  }
+}

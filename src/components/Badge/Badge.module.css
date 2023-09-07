@@ -1,0 +1,12 @@
+.total {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-primary);
+  color: white;
+  font-weight: 700;
+  border-radius: 50%;
+  font-size: 1rem;
+}

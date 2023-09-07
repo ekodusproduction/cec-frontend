@@ -1,0 +1,28 @@
+.newStudentPage {
+  display: grid;
+  gap: 3rem;
+}
+
+.heading {
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #566a7f;
+}
+
+/* input */
+
+.inputContainer {
+  padding: 1rem 1.5rem;
+  width: 100%;
+  border: 1px solid #d9dee3;
+  color: #697a8d;
+  border-radius: var(--border-radius);
+  outline: 0;
+  border-radius: 5px;
+  margin-block: 2rem 1.4rem;
+  max-width: 400px;
+}
+
+.next {
+  margin-left: 2rem;
+}

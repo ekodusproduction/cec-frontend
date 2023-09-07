@@ -1,0 +1,31 @@
+.wiget {
+  padding: 2rem;
+  background-color: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  /* min-width: 320px; */
+}
+
+.heading {
+  color: #808191;
+  font-weight: 400;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  text-transform: capitalize;
+}
+
+.value {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.icon {
+  width: 58px;
+  background-color: #edf4ff;
+  padding: 0.125rem;
+  border-radius: 6px;
+}

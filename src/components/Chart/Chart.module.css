@@ -1,0 +1,13 @@
+.heading {
+  margin-bottom: 2.2rem;
+  color: #566a9f;
+  font-weight: 500;
+}
+
+.chartContainer {
+  padding: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 8px;
+  background-color: white;
+  /* max-width: 600px; */
+}

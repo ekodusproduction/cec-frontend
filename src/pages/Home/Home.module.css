@@ -1,0 +1,116 @@
+.container {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    gap: 3rem;
+  }
+}
+
+.heading {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+}
+
+.wigetContainer {
+  display: grid;
+  gap: 1.4rem;
+}
+
+.tableContainer {
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .wigetContainer {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .tableContainer {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wigetContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Notification Panel */
+
+.subHeading {
+  color: #566a9f;
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-bottom: 1.6rem;
+}
+
+.notificationContainer {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 2rem;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+/* notification */
+
+.centerName {
+  font-weight: 500;
+  color: black;
+}
+
+.notification {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.6rem;
+  position: relative;
+  color: #697a8d;
+}
+
+.dateContainer,
+.notificationContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dateContainer {
+  text-align: center;
+  color: #a1acbb;
+}
+
+/* notification List */
+
+.notificationList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.87rem;
+}
+
+/* about page */
+
+@media screen and (min-width: 1023px) {
+  .aboutPageContainer .container {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: center;
+  }
+
+  .aboutPageContainer .wigetContainer {
+    order: 2;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+  }
+}
