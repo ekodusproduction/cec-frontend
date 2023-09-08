@@ -59,7 +59,10 @@ const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required")
-    .matches(/\.com$/, "Email must end with '.com'"),
+    .matches(
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+      "Invalid email address"
+    ),
 });
 
 const initialValues = {

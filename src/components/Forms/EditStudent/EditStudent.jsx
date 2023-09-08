@@ -35,8 +35,11 @@ const validationSchema = Yup.object().shape({
     .required("Please enter emergency phone number"),
   email: Yup.string()
     .email("Invalid email address")
-    .required("Please enter email")
-    .matches(/\.com$/, "Email should end with .com"),
+    .required("Email is required")
+    .matches(
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+      "Invalid email address"
+    ),
   year: Yup.number()
     .integer("Please enter a valid year")
     .required("Please enter passing year")

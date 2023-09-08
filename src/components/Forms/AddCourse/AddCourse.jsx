@@ -14,7 +14,6 @@ const validationSchema = Yup.object().shape({
   courseCode: Yup.string()
     .required("Please enter course code")
     .length(5, "Course code must be exactly 5 characters"),
-  // category: Yup.string().required("Please enter category"),
   qualificationType: Yup.string().required("Please enter qualification type"),
   courseFee: Yup.number()
     .required("Please enter course fee")

@@ -11,6 +11,7 @@ const validationSchema = Yup.object().shape({
   mobile: Yup.number()
     .required("Mobile number is required")
     .positive("Mobile Number can't be negative")
+    .integer("only numberic character is accepted")
     .test(
       "len",
       "Mobile number must be exactly 10 digits",
@@ -33,7 +34,10 @@ const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required")
-    .matches(/\.com$/, "Email must end with '.com'"),
+    .matches(
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+      "Invalid email address"
+    ),
   alternateNumber: Yup.number()
     .positive("Alternate Number can't be Negative")
     .test(
