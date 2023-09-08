@@ -24,15 +24,14 @@ const NewStudents = () => {
     fetchQualifications();
   }, []);
 
-  const saveQualification = (value) => {
-    console.log(value);
-  };
-
   const handleQualificationChange = (event) => {
     const qualification = event.target.value;
     setSelectedQualification(qualification);
-    console.log(qualification);
-    dispatch(cartActions.setQualification(qualification));
+    console.log(qualifications);
+    const qual = [...qualifications].filter((ele) => {
+      return ele?._id === qualification;
+    });
+    dispatch(cartActions.setQualification(qual[0]));
   };
 
   return (
@@ -50,11 +49,7 @@ const NewStudents = () => {
             >
               <option value="">Select Qualification</option>
               {qualifications.map((option) => (
-                <option
-                  key={option["_id"]}
-                  value={option["_id"]}
-                  onClick={() => console.log(option.qualification)}
-                >
+                <option key={option["_id"]} value={option["_id"]}>
                   {option.qualification}
                 </option>
               ))}

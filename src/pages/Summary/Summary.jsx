@@ -15,7 +15,8 @@ const Summary = () => {
   const cart = useSelector((state) => state.cart);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const qualification = cart.qualification;
+  const qualification = cart?.qualification?._id;
+  const qualificationName = cart?.qualification?.qualification;
   const token = window.localStorage.getItem("accessToken");
   const headers = { Authorization: `Bearer ${token}` };
 
@@ -119,7 +120,9 @@ const Summary = () => {
       >
         <Form className={styles.summaryPageContainer}>
           <section className={styles.formContainer}>
-            <h2 className={styles.heading}>Register student</h2>
+            <h2 className={styles.heading}>
+              Register student for {qualificationName}
+            </h2>
             <NewStudent />
           </section>
           <article className={styles.summaryContainer}>
