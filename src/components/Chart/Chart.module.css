@@ -9,5 +9,11 @@
   box-shadow: var(--box-shadow);
   border-radius: 8px;
   background-color: white;
-  /* max-width: 600px; */
+}
+
+@media screen and (max-width: 500px) {
+  .chartContainer {
+    max-height: 500px;
+    aspect-ratio: auto;
+  }
 }

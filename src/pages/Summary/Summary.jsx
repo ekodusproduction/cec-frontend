@@ -121,7 +121,8 @@ const Summary = () => {
         <Form className={styles.summaryPageContainer}>
           <section className={styles.formContainer}>
             <h2 className={styles.heading}>
-              Register student for {qualificationName}
+              Register student{" "}
+              {qualificationName || "Qualification Not selected"}
             </h2>
             <NewStudent />
           </section>

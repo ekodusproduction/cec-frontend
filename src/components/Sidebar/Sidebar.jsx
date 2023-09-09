@@ -21,6 +21,10 @@ const Sidebar = () => {
     ? `${styles.sidebar} ${styles.active}`
     : styles.sidebar;
 
+  const closeSidebar = () => {
+    dispatch(uiActions.toggleSidebar());
+  };
+
   return (
     <>
       <section className={sidebarStyles}>
@@ -41,7 +45,7 @@ const Sidebar = () => {
           <h2 className={styles.sectionHeading}>Navigation</h2>
           <ul>
             {sidebarData.map((item) => (
-              <li key={Math.random()}>
+              <li onClick={closeSidebar} key={Math.random()}>
                 <NavLink to={item.link} className={activeRouteHandler}>
                   <item.icon size={20} />
                   <p>{item.title}</p>
