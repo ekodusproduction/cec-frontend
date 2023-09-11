@@ -41,7 +41,6 @@ function App() {
             <Route path="courses" element={<CoursePage />} />
             <Route path="newstudent" element={<NewStudent />} />
             <Route path="newstudent/summary" element={<Summary />} />
-
             <Route path="courses/newcourse" element={<NewCourse />} />
             <Route path="newcenter" element={<RegisterCenter />} />
             <Route path="centers" element={<Centers />} />
